@@ -1,9 +1,13 @@
 <script >
-
+export default{
+  data(){
+    return{}
+  }
+}
 </script>
 
 <template>
-  <h1>Ciao mondo</h1>
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
