@@ -1,1 +1,13 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
+$gunmetal: #202c39ff;
+$gunmetal-2: #283845ff;
+$sage: #b8b08dff;
+$peach-yellow: #f2d492ff;
+$atomic-tangerine: #f29559ff;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $gunmetal;
+}
