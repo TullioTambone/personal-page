@@ -5,5 +5,4 @@ import router from './router/router.js'
 //importare bootstrap js
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
-
 createApp(App).use(router).mount('#app')
