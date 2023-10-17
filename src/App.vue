@@ -20,7 +20,7 @@ export default{
     cursor(e) {
       const cursorRect = document.querySelector("#cursor").getBoundingClientRect();
       const innerCursorRect = document.querySelector("#inner-cursor").getBoundingClientRect();
-
+     
       // Calcola le coordinate del cursore rispetto alla finestra visibile
       const x = e.clientX - cursorRect.width / 2;
       const y = e.clientY - cursorRect.height / 2;
@@ -65,6 +65,7 @@ export default{
   position: fixed;
   pointer-events: none;
   transition: transform 0.6s ease;
+  z-index: 9999999999999999999999999999;
 }
 
 #inner-cursor{
@@ -75,6 +76,7 @@ export default{
   position: fixed;
   pointer-events: none;
   transition: transform 0.3s ease;
+  z-index: 9999999999999999999999999999;
 }
 
 //active stuff

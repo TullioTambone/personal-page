@@ -1,4 +1,6 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+
 $gunmetal: #202c39ff;
 $gunmetal-2: #283845ff;
 $sage: #b8b08dff;
@@ -11,4 +13,6 @@ $atomic-tangerine: #f29559ff;
     box-sizing: border-box;
     background-color: $gunmetal;
     scroll-behavior: smooth;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
 }

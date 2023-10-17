@@ -65,7 +65,8 @@ export default{
 <style lang="scss" scoped>
 @use '../style/main.scss';
 .content{
-    height: 100vh;
+
+    position: relative;
     width: 100%;
     border: 1px solid red;
     &:first-child{
