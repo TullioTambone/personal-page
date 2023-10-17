@@ -1,12 +1,18 @@
 <script>
-import navbar from '../sections/navbar.vue';
+import about from '../components/about.vue';
+import works from '../components/works.vue';
+import contact from '../components/contact.vue';
 
 export default{
     data(){
-        return{}
+        return{
+            
+        }
     },
     components:{
-        navbar
+        about,
+        works,
+        contact
     },
     mounted(){
         this.overMouse();
@@ -22,8 +28,8 @@ export default{
                     cursor.style.width = '33px';
                     cursor.style.height = '33px';
 
-                    inner.style.width = '15px';
-                    inner.style.height = '15px';
+                    inner.style.width = '20px';
+                    inner.style.height = '20px';
                 });
                 
                 link.addEventListener("mouseout", () => {
@@ -34,16 +40,26 @@ export default{
                     inner.style.height = '7px';
                 });
             });
-        }
+        },
     }
 }
 </script>
 
 <template>
-    <navbar></navbar>
-    <div class="content">
-        <a href="" class="nav-links">bellaaaaaa</a>
-    </div>
+    <!-- about -->
+    <section class="content">
+        <about></about>
+    </section>
+
+    <!-- works -->
+    <section class="content" id="works">
+        <works></works>
+    </section>
+
+    <!-- contact -->
+    <section class="content" id="contact">
+        <contact></contact>
+    </section>
 </template>
 
 <style lang="scss" scoped>
@@ -52,5 +68,8 @@ export default{
     height: 100vh;
     width: 100%;
     border: 1px solid red;
+    &:first-child{
+        height: 80vh;
+    }
 }
 </style>

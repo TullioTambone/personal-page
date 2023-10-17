@@ -1,24 +1,46 @@
 <script >
+import 'animate.css';
+import navbar from './components/navbar.vue';
+
 export default{
   data(){
-    return{}
+    return{
+      isNavActive: false,
+    }
+  },
+  components:{
+    navbar
   },
   mounted(){
-    this.cursorFollow();
+    this.isNavActive = false;
+    window.addEventListener("mousemove", this.cursor);
+    window.addEventListener("scroll", this.toggleNav);
   },
   methods:{
-    cursorFollow(){
-      window.addEventListener("mousemove", this.cursor);
-    },
+    cursor(e) {
+      const cursorRect = document.querySelector("#cursor").getBoundingClientRect();
+      const innerCursorRect = document.querySelector("#inner-cursor").getBoundingClientRect();
 
-    cursor(e){
-      //pageX and Y 
+      // Calcola le coordinate del cursore rispetto alla finestra visibile
+      const x = e.clientX - cursorRect.width / 2;
+      const y = e.clientY - cursorRect.height / 2;
+
+      const xInner = e.clientX - innerCursorRect.width / 2;
+      const yInner = e.clientY - innerCursorRect.height / 2;
+
       let mouse = document.querySelector("#cursor");
-      mouse.style.transform = `translate(${e.pageX - 12}px, ${e.pageY - 14}px)`;
+      mouse.style.transform = `translate(${x}px, ${y}px)`;
 
       let inner = document.querySelector("#inner-cursor");
-      inner.style.transform = `translate(${e.pageX - 3}px, ${e.pageY - 5}px)`;
+      inner.style.transform = `translate(${xInner}px, ${yInner}px`;
     },
+    toggleNav(){
+      if (window.scrollY > 730) {
+        this.isNavActive = true;
+      } else {
+        this.isNavActive = false;
+      }
+    }
   }
 }
 </script>
@@ -26,6 +48,8 @@ export default{
 <template>
   <div id="cursor"></div>
   <div id="inner-cursor"></div>
+  <navbar v-if="this.isNavActive" :class="(this.isNavActive) ? 'active animate__animated animate__fadeInDown': ''"></navbar>
+  <navbar  id="about"></navbar>
   <router-view></router-view>
 </template>
 
@@ -51,5 +75,19 @@ export default{
   position: fixed;
   pointer-events: none;
   transition: transform 0.3s ease;
+}
+
+//active stuff
+.active{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+//media-query
+@media screen and (max-width: 400px) {
+  #cursor, #inner-cursor{
+    display: none;
+  }
 }
 </style>
