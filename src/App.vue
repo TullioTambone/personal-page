@@ -6,13 +6,13 @@ export default{
   data(){
     return{
       isNavActive: false,
+
     }
   },
   components:{
     navbar
   },
   mounted(){
-    this.isNavActive = false;
     window.addEventListener("mousemove", this.cursor);
     window.addEventListener("scroll", this.toggleNav);
   },
@@ -87,7 +87,7 @@ export default{
 }
 
 //media-query
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 769px) {
   #cursor, #inner-cursor{
     display: none;
   }

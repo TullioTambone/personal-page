@@ -52,8 +52,9 @@ export default {
                                     gsap.to('.swipe', {
                                         opacity: 1,
                                         y: 100,
+                                        x: 15,
                                         stagger: 0.09,
-                                        delay: 1.5,
+                                        delay: 2,
                                         duration: 0.5,
                                         ease: "bounce.out",
                                     })
@@ -88,6 +89,7 @@ export default {
             <span class="word-changed" v-if="showDeveloper">Web Developer</span>
             <span class="last"><br> and this is my world</span>
         </h1>
+
         <div class="swipe">
             <div class="chevron"></div>
             <div class="chevron"></div>
@@ -100,18 +102,20 @@ export default {
 @use '../style/main.scss';
 
 #box{
-    height: 90vh;
     padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     .swipe{
         opacity: 0;
+        position: relative;
+        margin: 0 auto;
         .chevron {
             position: absolute;
+            right: 50%;
+            transform: translateX(-50%);
             bottom: 80px;
             width: 28px;
             height: 8px;
@@ -178,8 +182,33 @@ export default {
         }
     }
 }
+@media screen and (max-width: 769px) {
+    #box{
+        padding: 2rem;
+        align-items:start;
+        #me{
+            font-size: 25px;
+            .word{
+                font-size: 80px;
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            
+            .word-replace, .word-changed{
+                font-size: 50px;
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            
+            .last{
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+    }
+}
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     #box{
         padding: 2rem;
         align-items:start;

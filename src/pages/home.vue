@@ -3,13 +3,17 @@ import gsap from 'gsap';
 import {Observer} from 'gsap/Observer';
 gsap.registerPlugin(Observer);
 
+import {store} from '../store';
+
 import about from '../components/about.vue';
 import works from '../components/works.vue';
 import contact from '../components/contact.vue';
+import myInfo from '../components/myInfo.vue'
 
 export default{
     data(){
         return{
+            store,
             wrap: [
                 'about',
                 'works',
@@ -33,6 +37,7 @@ export default{
         about,
         works,
         contact,
+        myInfo
     },
 
     mounted(){
@@ -122,6 +127,11 @@ export default{
             .fromTo(this.images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0);
 
             this.currentIndex = index;
+
+            if(index == 1){
+                store.section2 = true;
+                console.log(store.section2)
+            }
         }
     }
 }
@@ -160,9 +170,7 @@ export default{
             <div class="inner">
                 <div class="bg">
                     <div class="section-heading">
-                      <h2 class="section-heading">
-                        chi sono / cosa so fare
-                      </h2>
+                      <myInfo></myInfo>
                     </div>
                 </div>
             </div>
@@ -279,17 +287,6 @@ $bg-gradient: linear-gradient(
   user-select: none;
 }
 
-// h2 {
-//   font-size: clamp(1rem, 5vw, 5rem);
-//   font-weight: 400;
-//   text-align: center;
-//   letter-spacing: 0.5em;
-//   margin-right: -0.5em;
-//   color: #333;
-//   width: 90vw;
-//   max-width: 1200px;
-// }
-
 section {
   height: 100vh;
   width: 100%;
@@ -327,7 +324,6 @@ section {
 
 .first, .second, .third, .fourth{
   .bg {
-
     background-color: #cbcbcb;
   }
 }
