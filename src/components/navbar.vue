@@ -5,12 +5,9 @@ export default{
             
         }
     },
-    mounted(){
-        
-    },
-    methods:{
+    methods: {
 
-    }
+  }
 }
 </script>
 
@@ -18,7 +15,7 @@ export default{
     <nav>
         <ul>
             <li>
-                <a href="#about" class="nav-links">About</a>
+                <a @click="gotoSection(1, 0)" class="nav-links">About</a>
             </li>
             <li>
                 <a href="#works" class="nav-links">works</a>

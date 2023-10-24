@@ -48,8 +48,8 @@ export default{
 <template>
   <div id="cursor"></div>
   <div id="inner-cursor"></div>
-  <navbar v-if="this.isNavActive" :class="(this.isNavActive) ? 'active animate__animated animate__fadeInDown': ''"></navbar>
-  <navbar  id="about"></navbar>
+  <!-- <navbar v-if="this.isNavActive" :class="(this.isNavActive) ? 'active animate__animated animate__fadeInDown': ''"></navbar>
+  <navbar class="active"></navbar> -->
   <router-view></router-view>
 </template>
 
@@ -58,7 +58,7 @@ export default{
 
 #cursor{
   background-color: transparent;
-  border: 1px solid rgba($color: $atomic-tangerine, $alpha: 0.4);
+  border: 1px solid rgba($color: #333, $alpha: 0.4);
   border-radius: 50%;
   width: 25px;
   height: 25px;
@@ -69,7 +69,7 @@ export default{
 }
 
 #inner-cursor{
-  background-color: rgba($color: $atomic-tangerine, $alpha: 0.4);
+  background-color: rgba($color: #333, $alpha: 0.4);
   border-radius: 50%;
   width: 7px;
   height: 7px;
