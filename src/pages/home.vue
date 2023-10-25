@@ -108,7 +108,7 @@ export default{
             let fromTop = direction === -1
             let dFactor = fromTop ? -1 : 1
             let tl = gsap.timeline({
-                defaults: { duration: 1.25, ease: "power1.inOut" },
+                defaults: { duration: 0.8, ease: "power1.inOut" },
                 onComplete: () => this.animating = false
             });
         
@@ -193,7 +193,9 @@ export default{
         <div class="outer">
             <div class="inner">
                 <div class="bg">
-                    <h2 class="section-heading">contatti</h2>
+                    <h2 class="section-heading">
+                      <contact></contact>
+                    </h2>
                 </div>
             </div>
         </div>

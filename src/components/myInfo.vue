@@ -49,6 +49,7 @@ export default{
                         duration: 2,
                         ease: "power4.inOut",
                         onComplete: () => {
+                            
                             gsap.to('.fa-brands', {
                                 opacity: 0.2,
                                 duration: 1.5,
@@ -66,7 +67,7 @@ export default{
                                 }
                             })
 
-                            gsap.to('.image',{
+                            gsap.to('.image2Sec',{
                                 opacity:0.02,
                                 duration:1.5,
                             })
@@ -132,7 +133,8 @@ export default{
 
 
         <div class="tech">
-            <img class="image" src="/public/second-sec-bw.png" alt="">
+            <img class="image2Sec" src="/public/second-sec-bw.png" alt="">
+
             <i class="fa-solid fa-gear"></i>
             <i class="fa-brands fa-html5"></i>
             <i class="fa-brands fa-css3-alt"></i>
@@ -203,7 +205,6 @@ export default{
                 z-index: -1;
                 width: 100%;
                 opacity: 0.2;
-                filter: grayscale(60%);
             }
             i{
                 opacity: 0;

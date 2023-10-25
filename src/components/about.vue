@@ -18,12 +18,15 @@ export default {
                 y: 100,
                 stagger: 0.09,
                 delay: 1.5,
-                duration: 0.5,
+                duration: 0.8,
                 ease: "power4.inOut",
                 onComplete: () => {
                     gsap.to('.word-replace', {
+                        opacity:1,
+                        y: 100,
                         x: 300,
-                        duration: 0.2,
+                        duration: 1,
+                        delay:0.5,
                         ease: "power4.inOut",
                         onComplete: () => {
                             gsap.set('.word-replace', { display: 'none' });
@@ -85,7 +88,7 @@ export default {
             <span class="word">l</span>
             <span class="word">d</span>
             <br>
-            <span class="word word-replace">I'm a</span>
+            <span class=" word-replace">I'm a</span>
             <span class="word-changed" v-if="showDeveloper">Web Developer</span>
             <span class="last"><br> and this is my world</span>
         </h1>
