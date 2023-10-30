@@ -27,7 +27,7 @@ export default{
         }
     },
     mounted(){
-        this. desktop = gsap.matchMedia()
+        this.desktop = gsap.matchMedia()
     },
     watch: {
         'store.section2': function (newVal) {
@@ -75,7 +75,7 @@ export default{
                     })
                     let brands = document.querySelectorAll('.fa-brands');
                     let brandArray = Array.from(brands);
-
+                    
                     this.desktop.add("(max-width: 576px)", () => {
                         let positionsMin = this.positions.map((e) => ({
                             xAx: e.xAx * 0.6,
@@ -116,7 +116,7 @@ export default{
 
         <div class="infos">
             <div class="first">
-                <h3 class="sub-title">Who am i?</h3>
+                <h3 class="sub-title">Who I am</h3>
                 <p class="info"> 
                     I'm a web developer based in Italy, passionate about sports, design, and programming. My passion for the latter encompasses the entire spectrum of programming, from creating web interfaces to exploring innovative technologies.
                 </p>

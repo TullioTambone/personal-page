@@ -8,7 +8,7 @@ import {store} from '../store';
 import about from '../components/about.vue';
 import works from '../components/works.vue';
 import contact from '../components/contact.vue';
-import myInfo from '../components/myInfo.vue'
+import myInfo from '../components/myInfo.vue';
 
 export default{
     data(){
@@ -130,7 +130,10 @@ export default{
 
             if(index == 1){
                 store.section2 = true;
-                console.log(store.section2)
+            }else if(index == 2){
+                store.section3 = true;
+            }else if(index == 3){
+                store.section4 = true;
             }
         }
     }
@@ -181,9 +184,9 @@ export default{
         <div class="outer">
             <div class="inner">
                 <div class="bg">
-                    <h2 class="section-heading">
-                      Lavori
-                    </h2>
+                    <div class="section-heading">
+                      <works></works>
+                    </div>
                 </div>
             </div>
         </div>
@@ -193,9 +196,9 @@ export default{
         <div class="outer">
             <div class="inner">
                 <div class="bg">
-                    <h2 class="section-heading">
+                    <div class="section-heading">
                       <contact></contact>
-                    </h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -295,12 +298,14 @@ section {
   top: 0;
   position: fixed;
   visibility: hidden;
+  overflow: hidden;
+
 
   .outer,
   .inner {
     width: 100%;
     height: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
   }
 
   .bg {
@@ -313,20 +318,23 @@ section {
     top: 0;
     background-size: cover;
     background-position: center;
-
-    h2 {
-      z-index: 2;
-    }
+    overflow: hidden;
 
     .clip-text {
       overflow: hidden;
+    }
+
+    .section-heading{
+        width: 100%;
+        z-index: 2;
+        overflow: hidden;
     }
   }
 }
 
 .first, .second, .third, .fourth{
   .bg {
-    background-color: #cbcbcb;
+    background-color: #cdc9bb;
   }
 }
 

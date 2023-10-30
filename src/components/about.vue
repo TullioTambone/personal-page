@@ -185,10 +185,21 @@ export default {
         }
     }
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width:992px) {
     #box{
-        padding: 2rem;
-        align-items:start;
+        align-items:center;
+
+        #me{
+            .word{
+                font-size: 120px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #box{
+        padding: 5rem;
         #me{
             font-size: 25px;
             .word{

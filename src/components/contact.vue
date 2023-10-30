@@ -1,51 +1,100 @@
 <script>
 import gsap from 'gsap';
+import MotionPathPlugin from 'gsap/MotionPathPlugin';
+gsap.registerPlugin(MotionPathPlugin);
+
+import {store} from '../store';
 
 export default{
     name: 'contact',
     data(){
         return{
-
+            store,
+            formData: {
+                fullname: '',
+                email: '',
+                object: '',
+                body: '',
+            },
         }
+    },
+    watch: {
+        'store.section4': function (val) {
+            if (val) {
+                this.fourthAnimation();
+            }
+        },
     },
     mounted(){
-        this.animate();
     },
     methods:{
-        animate(){
-            gsap.to('.image', {
-                x: -500,
-                delay: 3,
-                duration:4,
-                ease: "power4.inOut",
-                
-            })
-        }
+        fourthAnimation(){
+            gsap.fromTo('.image4', {
+                x: 600,
+                y:0,
+            }, {
+                x: 0,
+                duration: 3,
+                ease: "power4.inOut"
+            });
+        },
+
     }
 }
 </script>
 
 <template>
-    
-    <div class="mycont">
-        <img class="image" src="/public/mano.png" alt="">
+    <div class="mycontainer">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+        <i class="fa-regular fa-envelope"></i>
+
+
+        <h4> CONTACT ME </h4>
+        <div class="contact">
+        </div>
+
+        <img class="image4" src="/public/mano.png" alt="">
     </div>
 </template>
 
 <style lang="scss" scoped>
-    .mycont{
-        height: 100vh;
-        width: 100vw;
-        position: relative;
+.mycontainer{
+    .contact{
+        width: 200px;
+        height: 200px;
         border: 1px solid red;
         overflow: hidden;
 
-        img{
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            right: -600px;
-            width: 80%;
+        #svg{
+           .r-1{
+                &::after{
+                    content: 'ciao';
+                    width: 50px;
+                    height: 50px;
+                    z-index: 99;
+                    position: relative;
+                }
+           } 
         }
     }
+    
+    img{
+        overflow-x: hidden;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mycontainer{
+        img{
+            width: 120%;
+        }
+    }
+}
 </style>

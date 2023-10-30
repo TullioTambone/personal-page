@@ -65,9 +65,11 @@ nav{
 
 @media screen and (max-width:400px) {
     nav{
+        justify-content: center;
+        
         ul{
-            padding: 0;
             li{
+                
                 a{
                     color:$peach-yellow;
                     text-decoration: none;
